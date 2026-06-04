@@ -1,0 +1,13 @@
+name: Keep Space Alive
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # runs every day at 12pm UTC
+  workflow_dispatch:       # lets you trigger it manually too
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Hugging Face Space
+        run: curl -s https://adityao3o8-neuroscan-pro.hf.space > /dev/null
